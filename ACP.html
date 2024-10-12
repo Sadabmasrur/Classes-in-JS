@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Random Number Generator</title>
+    <style>
+      body {
+        background-color: #282c34;
+        font-family: Arial, sans-serif;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        background-color: #3a3f47;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
+      h1 {
+        color: #61dafb;
+        margin-bottom: 20px;
+      }
+      button {
+        background-color: #61dafb;
+        color: #282c34;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #52c7e2;
+      }
+      .result {
+        margin-top: 20px;
+        background-color: #20232a;
+        padding: 15px;
+        border-radius: 5px;
+        min-height: 50px;
+        color: #61dafb;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Random Number Generator</h1>
+      <button onclick="generateRandomNumbers()">Generate Numbers</button>
+      <div class="result" id="result"></div>
+    </div>
+    <script>
+      function generateRandomNumbers() {
+        const resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = "";
+        let randomNumbers = "";
+
+        for (let i = 0; i < 5; i++) {
+          let randomNumber = Math.random().toFixed(6);
+          randomNumbers += randomNumber + "<br>";
+        }
+        resultDiv.innerHTML = randomNumbers;
+      }
+    </script>
+  </body>
+</html>
